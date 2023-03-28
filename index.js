@@ -125,7 +125,7 @@ const renderPokemon = () => {
                                 </ul>
                         </li>
                     </ul>
-                    <button type="button" class="btn btn-md btn-danger" onclick="resetQuiz()">Reset</button>
+                    <button type="button" class="btn btn-md btn-outline-danger" onclick="resetQuiz()">Reset</button>
                 </div>
             </div>
         </div>

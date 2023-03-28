@@ -1,5 +1,10 @@
-.app-container {
+body {
+    background-color: #e8ddd1;
     font-family: 'Press Start 2P', cursive;
+}
+
+.btn {
+    background-color: #f5f5f5;
 }
 
 .giphy-embed {
@@ -31,6 +36,11 @@
     padding: 1.5rem;
 }
 
+.question-container {
+    margin: auto;
+    width: 45vw;
+}
+
 .quiz-question {
     font-size: larger;
     font-weight: 600;
@@ -42,6 +52,15 @@
 .poke-metadata {
     display: flex;
     flex-direction: column;
+}
+
+.pokemon img {
+    max-height: 40vh;
+    object-fit: contain;
+}
+
+.pokemon h2 {
+    text-align: center;
 }
 
 @media (max-width: 650px) {

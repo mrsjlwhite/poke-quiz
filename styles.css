@@ -10,12 +10,13 @@
 
 #quizContainer {
     margin: auto;
-    max-width: 60vw;
+    max-width: 75vw;
     padding: 2rem;
 }
 
 .quiz-question {
     font-size: larger;
     font-weight: 600;
+    margin: 3% 0;
     text-align: center;
 }

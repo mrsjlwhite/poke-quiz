@@ -9,15 +9,13 @@
 }
 
 #quizContainer {
-    /* border: solid pink 3px; */
-    /* background-color: purple; */
-    padding: 2rem;
     margin: auto;
     max-width: 60vw;
+    padding: 2rem;
 }
 
 .quiz-question {
     font-size: larger;
     font-weight: 600;
-    text-align: center;    
+    text-align: center;
 }

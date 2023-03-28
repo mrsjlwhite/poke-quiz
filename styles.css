@@ -2,9 +2,24 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+.giphy-embed {
+    display: block;
+    margin: auto;
+}
+
+.bottom-giphy {
+    margin-top: 10%;
+}
+
 .quiz-title {
     margin-top: 5%;
     text-align: center;
+}
+
+.title-img {
+    margin-left: -30px;
+    margin-top: -10px;
+    max-height: 10vh;
 }
 
 .quiz-desc {
@@ -30,7 +45,24 @@
 }
 
 @media (max-width: 650px) {
+    .top-giphy,
+    .quiz-desc {
+        height: 40vh;
+    }
+    .quiz-desc {
+        padding: 1em;
+    }
+    .top-giphy {
+        margin-bottom: 20%;
+    }
+    .bottom-giphy {
+        margin-top: 20%;
+    }
+    #pokemonContainer {
+        margin-top: .5em;
+    }
     .pokemon {
-        align-items: center;
+        text-align: center;
+        height: 50vh;
     }
 }

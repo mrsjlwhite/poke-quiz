@@ -7,31 +7,29 @@ let typePokemon = [];
 let movePokemon = [];
 let selectedPokemon = null;
 
-const quiz = [
-    {
-        question: 'What\'s your favorite type?',
-        options: [
-            'Normal',
-            'Fire',
-            'Water',
-            'Grass',
-            'Flying',
-            'Fighting',
-            'Poison',
-            'Electric',
-            'Ground',
-            'Rock',
-            'Psychic',
-            'Ice',
-            'Bug',
-            'Ghost',
-            'Steel',
-            'Dragon',
-            'Dark',
-            'Fairy'
-        ]
-    }
+const quizQuestionA = 'What\'s your favorite type?';
+const quizQuestionAOptions = [
+    'Normal',
+    'Fire',
+    'Water',
+    'Grass',
+    'Flying',
+    'Fighting',
+    'Poison',
+    'Electric',
+    'Ground',
+    'Rock',
+    'Psychic',
+    'Ice',
+    'Bug',
+    'Ghost',
+    'Steel',
+    'Dragon',
+    'Dark',
+    'Fairy'
 ];
+
+const quizQuestionB = 'What\'s one of your favorite moves?';
 
 const buttonColors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark'];
 //#endregion
@@ -43,7 +41,8 @@ const getPokemonByType = () => {
         .then((response) => {
             typePokemon = response.pokemon.map(x => x.pokemon);
             const moveOptions = response.moves.map((moves) => moves.name);
-            renderQuiz('What\'s one of your favorite moves?', moveOptions, selectMove);
+            removeCurrentQuestion();
+            renderQuiz(quizQuestionB, moveOptions, selectMove);
         })
 }
 
@@ -165,13 +164,18 @@ const resetQuiz = () => {
     movePokemon = [];
     selectedPokemon = null;
 
-    renderQuiz(quiz[0].question, quiz[0].options, selectType);
+    renderQuiz(quizQuestionA, quizQuestionAOptions, selectType);
+}
+
+const removeCurrentQuestion = () => {
+    const questionContainer = document.getElementsByClassName('question-container')[0];
+    questionContainer.remove();
 }
 
 const renderQuizOption = (options, container, optionClickHandler) => {
     options.map((option) => {
         const optEl = document.createElement('button');
-        optEl.textContent = option;
+        optEl.textContent = option.charAt(0).toUpperCase() + option.slice(1);
         optEl.value = option.toLowerCase();
 
         const color = selectRandom(buttonColors);
@@ -185,13 +189,16 @@ const renderQuizOption = (options, container, optionClickHandler) => {
 
 const renderQuiz = (question, options, optionClickHandler) => {
     const container = document.getElementById('quizContainer');
-    const questionEl = document.createElement('h2');
+    const questionContainer = document.createElement('div');
+    questionContainer.className = 'question-container';
+    container.appendChild(questionContainer);
 
+    const questionEl = document.createElement('h2');
     questionEl.textContent = question;
     questionEl.className = 'quiz-question';
-    container.appendChild(questionEl);
+    questionContainer.appendChild(questionEl);
 
-    renderQuizOption(options, container, optionClickHandler);
+    renderQuizOption(options, questionContainer, optionClickHandler);
 }
 
 //#endregion
@@ -199,7 +206,7 @@ const renderQuiz = (question, options, optionClickHandler) => {
 const selectRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 const render = () => {
-    renderQuiz(quiz[0].question, quiz[0].options, selectType);
+    renderQuiz(quizQuestionA, quizQuestionAOptions, selectType);
 }
 
 render();

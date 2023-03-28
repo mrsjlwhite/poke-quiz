@@ -1,0 +1,23 @@
+.quiz-title {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.quiz-desc {
+    font-style: italic;
+    text-align: center;
+}
+
+#quizContainer {
+    /* border: solid pink 3px; */
+    /* background-color: purple; */
+    padding: 2rem;
+    margin: auto;
+    max-width: 60vw;
+}
+
+.quiz-question {
+    font-size: larger;
+    font-weight: 600;
+    text-align: center;    
+}

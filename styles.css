@@ -13,9 +13,7 @@
 }
 
 #quizContainer {
-    margin: auto;
-    max-width: 75vw;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .quiz-question {

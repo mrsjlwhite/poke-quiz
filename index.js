@@ -88,6 +88,8 @@ const renderPokemon = () => {
 
 
     const { id, name, sprites, height, weight, stats, types } = selectedPokemon;
+    const typeLis = types.map(t => `<li>${t.type.name}</li>`).join('');
+    const typesLabel = types.length === 1 ? 'Type' : 'Types';
 
     const pokemonMarkup = `
     <div class="container">
@@ -108,9 +110,9 @@ const renderPokemon = () => {
                         Weight: ${weight}
                     </li>
                     <li>
-                        Type(s):
+                        ${typesLabel}:
                             <ul> 
-                                ${types.map(t => `<li>${t.type.name}</li>`).join('')}
+                                ${typeLis}
                             </ul>
                     </li>
                     </li>

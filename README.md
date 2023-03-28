@@ -13,4 +13,4 @@ A quiz to help you figure out who should be your next Pokémon? 👀
 - [Pokemon API](https://pokeapi.co/)
 
 ## Check it out 👇
-https://mrsjlwhite.github.io/poke-quiz/
+[poke-quiz.com](https://mrsjlwhite.github.io/poke-quiz/)

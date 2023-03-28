@@ -94,37 +94,41 @@ const renderPokemon = () => {
     <div class="container">
         <div class="row">
             <div class="col-8">
-                <h2>${name.toUpperCase()}</h2>
-                <img class="img-fluid" src="${sprites.front_default}" />
+                <div class="pokemon">
+                    <h2>${name.toUpperCase()}</h2>
+                    <img class="img-fluid" src="${sprites.front_default}" />
+                </div>
             </div>
             <div class="col-4">
-                <ul>
-                    <li>
-                        Index: ${id}
-                    </li>
-                    <li>
-                        Height: ${height}
-                    </li>
-                    <li>
-                        Weight: ${weight}
-                    </li>
-                    <li>
-                        ${typesLabel}:
-                            <ul> 
-                                ${typeLis}
-                            </ul>
-                    </li>
-                    </li>
-                    <li>
-                        Stats:
-                            <ul> 
-                                ${stats.map(s => `<li>${s.stat.name}</li>`).join('')}
-                            </ul>
-                    </li>
-                </ul>
+                <div class="poke-metadata">
+                    <ul>
+                        <li>
+                            Index: ${id}
+                        </li>
+                        <li>
+                            Height: ${height}
+                        </li>
+                        <li>
+                            Weight: ${weight}
+                        </li>
+                        <li>
+                            ${typesLabel}:
+                                <ul> 
+                                    ${typeLis}
+                                </ul>
+                        </li>
+                        </li>
+                        <li>
+                            Stats:
+                                <ul> 
+                                    ${stats.map(s => `<li>${s.stat.name}</li>`).join('')}
+                                </ul>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-md btn-danger" onclick="resetQuiz()">Reset</button>
+                </div>
             </div>
         </div>
-        <button type="button" class="btn btn-md btn-danger" onclick="resetQuiz()">Reset</button>
     </div>
     `;
 

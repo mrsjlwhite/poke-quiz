@@ -24,3 +24,9 @@
     margin: 3% 0;
     text-align: center;
 }
+
+.pokemon,
+.poke-metadata {
+    display: flex;
+    flex-direction: column;
+}

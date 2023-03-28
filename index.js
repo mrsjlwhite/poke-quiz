@@ -93,13 +93,13 @@ const renderPokemon = () => {
     const pokemonMarkup = `
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8 col-xs-12">
                 <div class="pokemon">
                     <h2>${name.toUpperCase()}</h2>
                     <img class="img-fluid" src="${sprites.front_default}" />
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4 col-xs-12">
                 <div class="poke-metadata">
                     <ul>
                         <li>
